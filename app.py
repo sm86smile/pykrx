@@ -1,3 +1,15 @@
+import os
+
+import streamlit as st
+
+
+if "KRX_ID" in st.secrets:
+    os.environ["KRX_ID"] = st.secrets["KRX_ID"]
+
+if "KRX_PW" in st.secrets:
+    os.environ["KRX_PW"] = st.secrets["KRX_PW"]
+
+from pykrx import stock
 from datetime import date, timedelta
 
 import streamlit as st
